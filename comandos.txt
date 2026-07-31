@@ -1,0 +1,5 @@
+INICIAR SEREVIDOR, y se vean cambios segun el codigo:
+node --watch app.js
+
+OTRO COMANDO PARA INICIAR EL SERVIDOR, configurando package.json
+npm run dev
