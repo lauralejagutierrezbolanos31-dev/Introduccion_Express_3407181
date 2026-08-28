@@ -8,8 +8,10 @@ configDotenv()
 const app = express();  
 const port = process.env.PUERTO || 3030; 
 
+
 //uso de middleware body-parse
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 app.get("/", (_, res) => {
     res.send("Aprendiendo express, con la ficha 3407181, ADSO en el SENA 31 de julio ")
@@ -81,6 +83,16 @@ app.post("/ruta2",(req, res)=>{
     });
 
 });
+
+app.post("/formulario",  (req,res)=>{
+    const datosForm = req.body
+    const miNombre = req.body.nombre1
+    const miApellido = req.body.apellido2
+    const miCargo = req.body.cargo3
+    res.status(200).json({Mensaje: "Datos recibidos", nombre: miNombre, apellido: miApellido, cargo: miCargo})
+})
+
+
 
 
 
