@@ -8,6 +8,9 @@ configDotenv()
 const app = express();  
 const port = process.env.PUERTO || 3030; 
 
+//uso de middleware body-parse
+app.use(express.json())
+
 app.get("/", (_, res) => {
     res.send("Aprendiendo express, con la ficha 3407181, ADSO en el SENA 31 de julio ")
 })
@@ -39,6 +42,47 @@ app.get("/ruta4", (req, res)=>{
         <p>El listado esta en orden ${orden}</p>
         <p>Pagina; ${pagina} </p>`)
 })
+
+//enpoint para envio de datos formato JSON
+app.post("/ruta2",(req, res)=>{
+    const todosDatos = req.body
+    const name = req.body.nombre
+    const lastname = req.body.cargo
+    res.status(201).json({Datos: todosDatos, nombre: name, cargo: lastname})
+
+})
+
+
+ app.post("/login", (req, res) => {
+
+    const usuario = req.body.usuario;
+    const contraseña = req.body.contraseña;
+
+    if (!usuario || !contraseña) {
+        return res.status(400).json({
+            mensaje: "Faltan datos"
+        });
+    }
+
+    if (usuario === "admin") {
+        return res.status(200).json({
+            mensaje: "Bienvenido administrador"
+        });
+    }
+
+    if (usuario === "user") {
+        return res.status(200).json({
+            mensaje: "Bienvenido usuario"
+        });
+    }
+
+    return res.status(403).json({
+        mensaje: "Usuario no autorizado"
+    });
+
+});
+
+
 
 app.listen(port, () => {
      console.log( `Servidor en funcionamiento en el puerto: ${port} http://localhost:3030`); 
