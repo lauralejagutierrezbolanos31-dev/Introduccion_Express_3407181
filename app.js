@@ -8,6 +8,8 @@ const ruta = require("path")
 const rutaArchivoJson = ruta.join(__dirname, "datos.json")
 //importar libreria para subir archivos
 const multer =require("multer")
+//importacion de middleware personales
+const registroMiddleware = require("./middleware/registroMiddleware")
 
 const {
     validarNombre,
@@ -26,6 +28,15 @@ const almacenamiento = multer.diskStorage({
         cb(null, `${Date.now()}${extensionArchivo}`)
     }
 })
+
+//niddelware creados
+app.use((req, res, next)=>{
+    console.log(`tiempo milisegundos: ${Date.now()}`)
+    console.log(`fecha: ${new Date().toISOString()}`)
+    next()
+})
+
+app.use(registroMiddleware)
 
 const subirArchivo = multer({storage: almacenamiento})
 
@@ -122,6 +133,15 @@ app.post("/api/aprendices", subirArchivo.single("imagen"), (req, res) => {
         }
     );
 });
+
+//enpoint para modificat
+app.put("/api/aprendices/:id", (req,res)=>{
+    res.status(200).json({mensaje: "Endpoint en construccion de modificar."})
+})
+//enpoint para eliminar
+app.delete("/api/aprendices/:id", (req,res)=>{
+    res.status(200).json({mensaje: "Endpoint en construccion de eliminar."})
+})
 
 
 
