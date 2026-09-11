@@ -21,10 +21,19 @@
     "imagen": "foto3.jpg"
   },
   {
-    "id": "4",
     "nombre": "raquel",
-    "apellido": "bolaños",
-    "correo": "raquel@gmail.com",
-    "iamgen": "goto4.png"
+    "imagen": "/misImagenes/1789140987791.jpg"
+  },
+  {
+    "nombre": "johan",
+    "correo": "johan@gmail.com",
+    "id": 1789141997636,
+    "imagen": "Sin imagen"
+  },
+  {
+    "nombre": "vai",
+    "correo": "vai@gmail.com",
+    "id": 1789142124798,
+    "imagen": "Sin imagen"
   }
 ]
