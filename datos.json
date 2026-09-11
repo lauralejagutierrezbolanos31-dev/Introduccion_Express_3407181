@@ -1,18 +1,30 @@
 [
-    {
-        "dni": 1,
-        "nombre": "Ana",
-        "apellido": "Martinez",
-        "correo": "ana@gmail.com",
-        "imagen": "foto.jpg"
-    },
-
-    {
-        "dni": 2,
-        "nombre": "Lina",
-        "apellido": "Carrillo",
-        "correo": "lina@gmail.com",
-        "imagen": "foto.jpg"
-    }
-
+  {
+    "dni": 1,
+    "nombre": "Ana",
+    "apellido": "Martinez",
+    "correo": "ana@gmail.com",
+    "imagen": "foto.jpg"
+  },
+  {
+    "dni": 2,
+    "nombre": "Lina",
+    "apellido": "Carrillo",
+    "correo": "lina@gmail.com",
+    "imagen": "foto2.jpg"
+  },
+  {
+    "dni": 3,
+    "nombre": "laura",
+    "apellido": "bolaños",
+    "correo": "laura@gmail.com",
+    "imagen": "foto3.jpg"
+  },
+  {
+    "id": "4",
+    "nombre": "raquel",
+    "apellido": "bolaños",
+    "correo": "raquel@gmail.com",
+    "iamgen": "goto4.png"
+  }
 ]
